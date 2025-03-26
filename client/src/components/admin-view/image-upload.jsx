@@ -6,6 +6,9 @@ import { Button } from "../ui/button";
 import axios from "axios";
 import { Skeleton } from "../ui/skeleton";
 
+
+const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
+
 function ProductImageUpload({
   imageFile,
   setImageFile,
