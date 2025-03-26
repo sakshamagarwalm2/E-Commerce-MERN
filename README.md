@@ -4,6 +4,14 @@ A full-featured e-commerce platform built with the MERN (MongoDB, Express.js, Re
 
 [Demo](https://e-commerce-mern-33mx.vercel.app/)
 
+![alt](https://github.com/sakshamagarwalm2/E-Commerce-MERN/blob/main/Public/Screenshot%202025-03-26%20235914.png)
+
+
+![alt](https://github.com/sakshamagarwalm2/E-Commerce-MERN/blob/main/Public/Screenshot%202025-03-26%20235935.png)
+
+
+![alt](https://github.com/sakshamagarwalm2/E-Commerce-MERN/blob/main/Public/Screenshot%202025-03-26%20235949.png)
+
 
 ## 🌟 Features
 
@@ -32,6 +40,8 @@ A full-featured e-commerce platform built with the MERN (MongoDB, Express.js, Re
 - Redux Toolkit for state management
 - Tailwind CSS for styling
 - Radix UI for accessible components
+- 
+![alt](https://github.com/sakshamagarwalm2/E-Commerce-MERN/blob/main/Public/Screenshot%202025-03-27%20000017.png)
 - React Router for navigation
 - Axios for API requests
 
@@ -126,6 +136,9 @@ server/
 - `POST /api/auth/login` - Login user
 - `GET /api/auth/profile` - Get user profile
 
+- 
+![alt](https://github.com/sakshamagarwalm2/E-Commerce-MERN/blob/main/Public/Screenshot%202025-03-27%20000030.png)
+
 ### Product Routes
 - `GET /api/products` - Get all products
 - `GET /api/products/:id` - Get single product
@@ -148,6 +161,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
 
 ## 📝 License
 
