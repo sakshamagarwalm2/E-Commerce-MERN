@@ -1,7 +1,3 @@
-# E-Commerce-MERN
- 
-
-
 # E-Commerce MERN Stack Application
 
 A full-featured e-commerce platform built with the MERN (MongoDB, Express.js, React.js, Node.js) stack, featuring both customer-facing shopping interfaces and admin management capabilities.
