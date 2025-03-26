@@ -1,19 +1,26 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
+
 const initialState = {
   isLoading: false,
   searchResults: [],
+  error: null,
 };
 
 export const getSearchResults = createAsyncThunk(
-  "/order/getSearchResults",
-  async (keyword) => {
-    const response = await axios.get(
-      `http://localhost:5000/api/shop/search/${keyword}`
-    );
+  "search/getSearchResults",
+  async (keyword, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/api/shop/search/${encodeURIComponent(keyword)}`
+      );
 
-    return response.data;
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || 'Search failed');
+    }
   }
 );
 
@@ -23,20 +30,24 @@ const searchSlice = createSlice({
   reducers: {
     resetSearchResults: (state) => {
       state.searchResults = [];
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getSearchResults.pending, (state) => {
         state.isLoading = true;
+        state.error = null;
       })
       .addCase(getSearchResults.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.searchResults = action.payload.data;
+        state.searchResults = action.payload.data || [];
+        state.error = null;
       })
-      .addCase(getSearchResults.rejected, (state) => {
+      .addCase(getSearchResults.rejected, (state, action) => {
         state.isLoading = false;
         state.searchResults = [];
+        state.error = action.payload;
       });
   },
 });
